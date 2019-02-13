@@ -1,19 +1,21 @@
+<!-- hypertext markup language -->
 <!DOCTYPE html>
 <html lang="en">
+<!-- START HEAD ELEMENT -->
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="">
 				<!-- adapts webpage to screen/browser size changes -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Recipes</title>
+		<title>Zodiac</title>
 
 		<!-- insert boilerplate code  and links below -->
 		<!-- link to FontAwesome -->
-		<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-<!-- FONT AWESOME -->
-<!-- <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+		<!-- FONT AWESOME -->
+		<!-- <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
 		<!-- link to css reset -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -22,45 +24,75 @@
 		<link rel="stylesheet" type="text/css" href="css/animate.css">
 
 		<!-- link to bootstrap CDN files -->
-		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<!-- BOOTSTRAP -->
-<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+		<!-- BOOTSTRAP -->
+		<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 
-	<!-- link to my CSS stylesheet; KEEP AT BOTTOM -- STRONGEST IN CASCADE -->
+		<!-- link to my CSS stylesheet; KEEP AT BOTTOM -- STRONGEST IN CASCADE -->
 		<link rel="stylesheet" href="css/main.css">
 
 	</head>
-
-
-<!-- ---------- START BODY ELEMENT ---------- -->
+<!-- START BODY ELEMENT -->
 	<body>
 
-		<input type="text" id="">
-		<button type="button" onclick="getInfo()">Submit</button>
+<!-- NAVIGATION BAR -->
+		<nav class="navbar navbar-expand navbar-light bg-light">
+			<p class="navbar-brand">ZODIAC</p>
 
-		<h1 id="#"></h1>
-		<h2 id="#"></h2>
-		<h3 id ="#"></h3>
-		<h4 id="#"></h3>
+<!-- INPUT BOX AND BUTTON LINKING TO JS ZODIAC SIGN ARRAY AND LOOP FUNCTION -->
+			<div class="input-group mb-3">
+				<input id="inputSign" type="text" class="form-control" placeholder="What's Your Zodiac Sign?">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="button" onclick="getInfo()">Submit</button>
+
+<!-- HIDDEN ZODIAC SIGN DROPDOWN MENU					 -->
+					<button class="btn btn-outline-secondary" type="button">
+						<select class="dropdown-item" id="zodiacList">
+							<option value="initial" disabled="true" selected="selected">Select</option>
+						</select></button>
+			</div>
 
 
+<!-- NAVIGATION BACK HOME AND TO OTHER PARTS OF WEBSITE --- THIS NEEDS TO BE CLEANED UP AND LINKED -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+
+					<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+					</li>
+
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Projects
+					</a>
 
 
+				</ul>
+			</div>
+		</nav>
 
 
+<!-- ELEMENTS TO BE MANIPULATED USING JS DOM -->
+		<div class="text-center">
+			<div class="container form-group hiddenDiv" id="displayZodiac">
+				<img src="" id="image">
+				<h1 class="display-3 inputText" id="name"></h1>
+				<h2 class="display-5 inputText" id="dates"></h2>
+				<h3 class="lead inputText" id ="good"></h3>
+				<h3 class="lead inputText" id="bad"></h3>
+			</div>
+		</div>
 
+<!-- SCRIPTS ---- THIS NEEDS TO BE CLEANED UP -->
+	<script type="text/javascript" src="js/main.js"></script>
 
-
-
-
-<!----- SCRIPTS ----->
-<!-- JQUERY -->
-<script src="js/jquery-3.1.1.min.js"></script>
-<!-- BOOTSTRAP -->
-<script src="js/bootstrap.min.js"></script>
-<!-- CUSTOM -->
-<script src="js/main.js"></script>
-
+	<!-- SCRIPTS -->
+	<!-- 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
 	</body>
 </html>
